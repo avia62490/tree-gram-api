@@ -3,8 +3,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "Test name",
-  "email": "test@test.com",
+  "name": "bsimpson",
+  "email": "bart@bart.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -14,6 +14,9 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "finn@finn.com",
   "password": "password"
 }
+
+### Posts index
+GET http://localhost:3000/posts.json
