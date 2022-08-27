@@ -1,4 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDY4Mjh9.2pHODrhpdXMiHQyDQi--bZV9tbmR2YNg54y1aRYCgq4
+@jwt2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDgxMDF9.V8v2p8HLAUXKVK0ATCLXcPXiGHtRJkUMAjXltmtMFEw
+@jwt3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDY4Mjh9.2pHODrhpdXMiHQyDQi--bZV9tbmR2YNg54y1aRYCgq4
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -25,4 +26,25 @@ GET http://localhost:3000/posts.json
 
 ### Posts create
 POST http://localhost:3000/posts.json
-Authorization: Bearer {{jwt}}
+Authorization: Bearer {{jwt3}}
+Content-Type: application/json
+
+{
+  "image_url": "https://frinkiac.com/img/S06E23/1193658.jpg",
+  "description": "tree house",
+  "latitude": 41.968304,
+  "longitude": -87.646540,
+  "user_id":3
+}
+
+### Post update
+PATCH http://localhost:3000/posts/3.json
+Authorization: Bearer {{jwt2}}
+Content-Type: application/json
+
+{
+  "image_url": "Tree image",
+  "description": "the description is different",
+  "latitude": 0,
+  "longitude": 0
+}
