@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
 ############# POSTS ##############
   get "/posts" => "posts#index"
+  post "/posts" => "posts#create"
 end

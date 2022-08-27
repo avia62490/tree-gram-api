@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDY4Mjh9.2pHODrhpdXMiHQyDQi--bZV9tbmR2YNg54y1aRYCgq4
+
 ### Users create (signup)
 POST http://localhost:3000/users.json
 Content-Type: application/json
@@ -20,3 +22,7 @@ Content-Type: application/json
 
 ### Posts index
 GET http://localhost:3000/posts.json
+
+### Posts create
+POST http://localhost:3000/posts.json
+Authorization: Bearer {{jwt}}
