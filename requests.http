@@ -43,8 +43,5 @@ Authorization: Bearer {{jwt2}}
 Content-Type: application/json
 
 {
-  "image_url": "Tree image",
-  "description": "the description is different",
-  "latitude": 0,
-  "longitude": 0
+  "description": "Tree with tree house"
 }
