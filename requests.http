@@ -1,3 +1,4 @@
+@jwt1 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjE3OTI4NDl9.Wor1YPg7EgAwCOykJnJWpsyhQUXBbZSaQjqQvkQXQJs
 @jwt2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDgxMDF9.V8v2p8HLAUXKVK0ATCLXcPXiGHtRJkUMAjXltmtMFEw
 @jwt3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDY4Mjh9.2pHODrhpdXMiHQyDQi--bZV9tbmR2YNg54y1aRYCgq4
 
@@ -17,7 +18,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "finn@finn.com",
+  "email": "test@test.com",
   "password": "password"
 }
 
@@ -26,15 +27,14 @@ GET http://localhost:3000/posts.json
 
 ### Posts create
 POST http://localhost:3000/posts.json
-Authorization: Bearer {{jwt3}}
+Authorization: Bearer {{jwt1}}
 Content-Type: application/json
 
 {
   "image_url": "https://frinkiac.com/img/S06E23/1193658.jpg",
-  "description": "tree house",
+  "description": "tree in backyard",
   "latitude": 41.968304,
-  "longitude": -87.646540,
-  "user_id":3
+  "longitude": -87.646540
 }
 
 ### Post update

@@ -6,13 +6,19 @@ class PostsController < ApplicationController
     render json: posts.as_json
   end
 
+  def show
+    post = Post.find_by(id: params[:id])
+    render json: post.as_json
+    # render json: {mesassage: "Hello Post Show"}
+  end
+
   def create
     post = Post.new(
       image_url: params[:image_url],
       description: params[:description],
       latitude: params[:latitude],
       longitude: params[:longitude],
-      user_id: params[:user_id]
+      user_id: params[:user_id] 
     )
     post.save
     render json: post.as_json
