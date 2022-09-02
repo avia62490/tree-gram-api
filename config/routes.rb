@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   post "/comments" => "comments#create"
   patch "/comments/:id" => "comments#update"
   delete "/comments/:id" => "comments#destroy"
+
+############ FOLLOWS #################
+  post "/follows" => "follows#create"
 end
