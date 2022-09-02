@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
 ############ COMMENTS ##############
   get "/comments" => "comments#index"
+  post "/comments" => "comments#create"
 end
