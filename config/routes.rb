@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   delete "/comments/:id" => "comments#destroy"
 
 ############ FOLLOWS #################
-  post "/follows" => "follows#create"
+  post "/follows" => "follows#create" #follow another user
+  delete "/follows/:id" => "follows#destroy" #stop following a user
 end

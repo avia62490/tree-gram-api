@@ -1,6 +1,6 @@
 @jwt1 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjE3OTI4NDl9.Wor1YPg7EgAwCOykJnJWpsyhQUXBbZSaQjqQvkQXQJs
 @jwt2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDgxMDF9.V8v2p8HLAUXKVK0ATCLXcPXiGHtRJkUMAjXltmtMFEw
-@jwt3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDY4Mjh9.2pHODrhpdXMiHQyDQi--bZV9tbmR2YNg54y1aRYCgq4
+@jwt3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjIyMzY4NjF9.AccVB9279eeo8OFSfnEElfzvdPjWEilb6YZpQsSwOgw
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -18,7 +18,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "bart@bart.com",
   "password": "password"
 }
 
@@ -78,3 +78,22 @@ Content-Type: application/json
 {
   "body": "I'll visit this tree on my next adventure"
 }
+
+### Comments destroy
+DELETE http://localhost:3000/comments/4.json
+
+
+################ FOLLOWS ##################
+
+### Create Follow (follow someone)
+POST http://localhost:3000/follows.json
+Authorization: Bearer {{jwt3}}
+Content-Type: application/json
+
+{
+  "followed_user_id": 1
+}
+
+### Destroy Follow (Unfollow someone)
+DELETE http://localhost:3000/follows/11.json
+Authorization: Bearer {{jwt3}}
