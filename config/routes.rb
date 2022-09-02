@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 ############ COMMENTS ##############
   get "/comments" => "comments#index"
   post "/comments" => "comments#create"
+  patch "/comments/:id" => "comments#update"
 end

@@ -14,4 +14,11 @@ class CommentsController < ApplicationController
     comment.save
     render json: comment.as_json
   end
+
+  def update
+    comment = Comment.find_by(id: params[:id])
+    comment.body = params[:body]
+    comment.save
+    render json: comment.as_json
+  end
 end

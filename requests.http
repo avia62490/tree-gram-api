@@ -22,6 +22,10 @@ Content-Type: application/json
   "password": "password"
 }
 
+
+################## POSTS ######################
+
+
 ### Posts index
 GET http://localhost:3000/posts.json
 
@@ -37,6 +41,9 @@ Content-Type: application/json
   "longitude": -87.646540
 }
 
+### Post Show
+GET http://localhost:3000/posts/3.json
+
 ### Post update
 PATCH http://localhost:3000/posts/3.json
 Authorization: Bearer {{jwt2}}
@@ -44,4 +51,30 @@ Content-Type: application/json
 
 {
   "description": "Tree with tree house"
+}
+
+### Post Destroy
+DELETE http://localhost:3000/posts/11.json
+
+################## COMMENTS ####################
+
+### Comments index
+GET http://localhost:3000/comments.json
+
+### Comments create
+POST http://localhost:3000/comments.json
+Content-Type: application/json
+
+{
+  "body": "Very Nice, I like the leaf color",
+  "post_id": 7,
+  "user_id": 2
+}
+
+### Comments update
+PATCH http://localhost:3000/comments/4.json
+Content-Type: application/json
+
+{
+  "body": "I'll visit this tree on my next adventure"
 }
