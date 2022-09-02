@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   def show
     post = Post.find_by(id: params[:id])
     render json: post.as_json
-    # render json: {mesassage: "Hello Post Show"}
   end
 
   def create
@@ -32,6 +31,12 @@ class PostsController < ApplicationController
     post.longitude = params[:longitude] || post.longitude
     post.save
     render json: post.as_json
+  end
+
+  def destroy
+    post = Post.find_by(id: params[:id])
+    post.destroy
+    render json: {message: "Post has been deleted"}
   end
 
 end
