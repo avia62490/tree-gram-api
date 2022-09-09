@@ -3,7 +3,15 @@ class PostsController < ApplicationController
 
   def index
     posts = Post.all
-    render json: posts.as_json
+    # render json: posts.as_json
+    posts = [
+      { type: "Feature", geometry: { type: "Point", coordinates: [ Post.first.longitude, Post.first.latitude, 0.0 ] } },
+    ]
+    render json: {
+      type: "FeatureCollection",
+      crs: { type: "name", properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+      features: posts
+      }
   end
 
   def show
