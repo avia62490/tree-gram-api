@@ -4,13 +4,14 @@ class PostsController < ApplicationController
   def index
     posts = Post.all
     # render json: posts.as_json
-    posts = [
-      { type: "Feature", geometry: { type: "Point", coordinates: [ Post.first.longitude, Post.first.latitude, 0.0 ] } },
-    ]
+    posts_coordinates = []
+    posts.each do |post|
+      posts_coordinates << { type: "Feature", properties: { id: post.id, user_id: post.user_id, image: post.image_url, likes: post.likes }, geometry: { type: "Point", coordinates: [ post.longitude, post.latitude, 0.0 ] } }
+    end
     render json: {
       type: "FeatureCollection",
       crs: { type: "name", properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-      features: posts
+      features: posts_coordinates
       }
   end
 
