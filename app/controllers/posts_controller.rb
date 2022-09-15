@@ -26,7 +26,7 @@ class PostsController < ApplicationController
       description: params[:description],
       latitude: params[:latitude],
       longitude: params[:longitude],
-      user_id: params[:user_id] 
+      user_id: current_user.id 
     )
     post.save
     render json: post.as_json
