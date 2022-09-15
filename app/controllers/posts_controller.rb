@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     # render json: posts.as_json
     posts_coordinates = []
     posts.each do |post|
-      posts_coordinates << { type: "Feature", properties: { id: post.id, user_id: post.user_id, image: post.image_url, likes: post.likes }, geometry: { type: "Point", coordinates: [ post.longitude, post.latitude, 0.0 ] } }
+      posts_coordinates << { type: "Feature", properties: { id: post.id, user_id: post.user_id, user_name: post.user.name, image: post.image_url, likes: post.likes }, geometry: { type: "Point", coordinates: [ post.longitude, post.latitude, 0.0 ] } }
     end
     render json: {
       type: "FeatureCollection",
