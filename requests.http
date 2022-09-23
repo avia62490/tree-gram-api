@@ -1,4 +1,4 @@
-@jwt1 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjM5NjA2MjB9.MnCHOA5_eHkUB9SRTwSd9SvTn4Vz_JJEMMQL8L_ddus
+@jwt1 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjQwNDE1NDN9.hqk8WNSfVHFDMrlvstOeOtP_kynZ914esGYc9xQ80ZA
 @jwt2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjE2NDgxMDF9.V8v2p8HLAUXKVK0ATCLXcPXiGHtRJkUMAjXltmtMFEw
 @jwt3 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjMzMzk4MTV9.2KqiVmJMHYZK3qkK_IBjcyAIvBzjFIV8_cRQOFpVnBo
 
@@ -31,11 +31,10 @@ GET http://localhost:3000/posts.json
 
 ### Posts create
 POST http://localhost:3000/posts.json
-Authorization: Bearer {{jwt3}}
+Authorization: Bearer {{jwt1}}
 Content-Type: application/json
 
 {
-  "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ2WhgbiWor6wAgodn1rNlDMnw5u9LnXo3PQ&usqp=CAU",
   "description": "Cool tree, I like it!",
   "latitude": 41.971707,
   "longitude": -87.654395
@@ -45,12 +44,12 @@ Content-Type: application/json
 GET http://localhost:3000/posts/3.json
 
 ### Post update
-PATCH http://localhost:3000/posts/3.json
-Authorization: Bearer {{jwt2}}
+PATCH http://localhost:3000/posts/12.json
+Authorization: Bearer {{jwt1}}
 Content-Type: application/json
 
 {
-  "description": "Tree with tree house"
+  "description": "Testing user authorization on backend"
 }
 
 ### Post Destroy

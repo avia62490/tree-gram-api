@@ -21,8 +21,11 @@ class PostsController < ApplicationController
   end
 
   def create
+    response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
+    p cloudinary_url
     post = Post.new(
-      image_url: params[:image_url],
+      image_url: cloudinary_url,
       description: params[:description],
       latitude: params[:latitude],
       longitude: params[:longitude],
