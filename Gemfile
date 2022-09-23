@@ -49,4 +49,5 @@ end
 gem 'jwt'
 gem 'http'
 gem 'jb'
+gem 'cloudinary'
 
