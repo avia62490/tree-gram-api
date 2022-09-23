@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 ############ USER/SESSION ###########
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
+  get "/users/:id" => "users#show"
 
 ############# POSTS ##############
   get "/posts" => "posts#index"
